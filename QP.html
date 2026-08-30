@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Downloads</title>
+
+
+    <style>
+
+        /* =========================================
+           BASIC RESET
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f4f7fb;
+
+            color: #172033;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .downloads-page {
+
+            width: 94%;
+
+            max-width: 1200px;
+
+            margin: 35px auto 60px;
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .downloads-header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06265f,
+                    #0b4a9e
+                );
+
+            color: white;
+
+            padding: 35px 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        .downloads-header .icon {
+
+            font-size: 48px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .downloads-header h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .downloads-header p {
+
+            font-size: 16px;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================= */
+
+        .search-box {
+
+            background: white;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 18px
+                rgba(0, 0, 0, 0.07);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .search-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .search-icon {
+
+            position: absolute;
+
+            left: 16px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            font-size: 20px;
+
+        }
+
+
+        #downloadSearch {
+
+            width: 100%;
+
+            padding: 14px 18px 14px 48px;
+
+            border: 1px solid #d7deea;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            outline: none;
+
+        }
+
+
+        #downloadSearch:focus {
+
+            border-color: #0b4a9e;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(11, 74, 158, 0.1);
+
+        }
+
+
+        /* =========================================
+           SECTION
+        ========================================= */
+
+        .download-section {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 18px;
+
+            margin-bottom: 30px;
+
+            box-shadow:
+                0 5px 22px
+                rgba(0, 0, 0, 0.07);
+
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .section-heading .section-icon {
+
+            font-size: 30px;
+
+        }
+
+
+        .section-heading h2 {
+
+            color: #06265f;
+
+            font-size: 24px;
+
+        }
+
+
+        /* =========================================
+           ONLINE FORM CARDS
+        ========================================= */
+
+        .forms-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 18px;
+
+        }
+
+
+        .form-card {
+
+            border: 1px solid #e1e7f0;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            background: #f9fbff;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .form-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0, 0, 0, 0.09);
+
+        }
+
+
+        .card-icon {
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .form-card h3 {
+
+            font-size: 17px;
+
+            color: #172033;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .download-btn {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #0b4a9e;
+
+            color: white;
+
+            padding: 9px 15px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .download-btn:hover {
+
+            background: #06265f;
+
+            color: white;
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        /* =========================================
+           YEAR BUTTONS
+        ========================================= */
+
+        .year-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .year-button {
+
+            border: none;
+
+            background: #e8eef8;
+
+            color: #06265f;
+
+            padding: 11px 25px;
+
+            border-radius: 25px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+        }
+
+
+        .year-button:hover {
+
+            background: #d6e2f6;
+
+        }
+
+
+        .year-button.active {
+
+            background: #06265f;
+
+            color: white;
+
+        }
+
+
+        /* =========================================
+           YEAR CONTENT
+        ========================================= */
+
+        .year-content {
+
+            display: none;
+
+        }
+
+
+        .year-content.active {
+
+            display: block;
+
+        }
+
+
+        /* =========================================
+           PAPER GRID
+        ========================================= */
+
+        .papers-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(260px, 1fr)
+                );
+
+            gap: 18px;
+
+        }
+
+
+        .paper-card {
+
+            border: 1px solid #e1e7f0;
+
+            background: #f9fbff;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .paper-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0, 0, 0, 0.09);
+
+        }
+
+
+        .paper-icon {
+
+            font-size: 36px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .paper-card h3 {
+
+            color: #06265f;
+
+            font-size: 17px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .paper-card p {
+
+            color: #667085;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================================
+           NO RESULT
+        ========================================= */
+
+        #noResults {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #777;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .downloads-footer {
+
+            text-align: center;
+
+            color: #667085;
+
+            font-size: 14px;
+
+            padding: 20px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .downloads-page {
+
+                width: 94%;
+
+                margin-top: 20px;
+
+            }
+
+
+            .downloads-header {
+
+                padding: 25px 18px;
+
+            }
+
+
+            .downloads-header h1 {
+
+                font-size: 25px;
+
+            }
+
+
+            .downloads-header .icon {
+
+                font-size: 40px;
+
+            }
+
+
+            .download-section {
+
+                padding: 20px 16px;
+
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 21px;
+
+            }
+
+
+            .year-buttons {
+
+                gap: 8px;
+
+            }
+
+
+            .year-button {
+
+                padding: 9px 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="downloads-page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <div class="downloads-header">
+
+        <div class="icon">
+            📥
+        </div>
+
+        <h1>
+            Library Downloads
+        </h1>
+
+        <p>
+            Online Forms & Previous Year Question Papers
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SEARCH
+    ========================================== -->
+
+    <div class="search-box">
+
+        <div class="search-wrapper">
+
+            <span class="search-icon">
+                🔎
+            </span>
+
+            <input
+                type="text"
+                id="downloadSearch"
+                placeholder="Search forms, years, departments or question papers..."
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         ONLINE FORMS
+    ========================================== -->
+
+    <section class="download-section">
+
+
+        <div class="section-heading">
+
+            <span class="section-icon">
+                📄
+            </span>
+
+            <h2>
+                Online Forms
+            </h2>
+
+        </div>
+
+
+        <div class="forms-grid">
+
+
+            <!-- FORM 1 -->
+
+            <div class="form-card searchable-item">
+
+                <div class="card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Library Membership Form - Students
+                </h3>
+
+                <a
+                    href="https://student.alliance.edu.in/KnowledgePro/StudentLogin.do"
+                    target="_blank"
+                    class="download-btn">
+
+                    Open Form ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- FORM 2 -->
+
+            <div class="form-card searchable-item">
+
+                <div class="card-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    Library Membership Form - Faculty/Staff
+                </h3>
+
+                <a
+                    href="https://portal.alliance.edu.in/auerp/Login.do"
+                    target="_blank"
+                    class="download-btn">
+
+                    Open Form ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- FORM 3 -->
+
+            <div class="form-card searchable-item">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Lost/Damaged Book Replacement Request Form
+                </h3>
+
+                <a
+                    href="https://forms.office.com/r/vPfaGWtTL2"
+                    target="_blank"
+                    class="download-btn">
+
+                    Open Form ↗
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         QUESTION PAPERS
+    ========================================== -->
+
+    <section class="download-section">
+
+
+        <div class="section-heading">
+
+            <span class="section-icon">
+                📚
+            </span>
+
+            <h2>
+                Question Papers Download
+            </h2>
+
+        </div>
+
+
+
+        <!-- =====================================
+             YEAR BUTTONS
+        ====================================== -->
+
+        <div class="year-buttons">
+
+            <button
+                class="year-button active"
+                onclick="showYear('year2025', this)">
+
+                2025
+
+            </button>
+
+
+            <button
+                class="year-button"
+                onclick="showYear('year2024', this)">
+
+                2024
+
+            </button>
+
+
+            <button
+                class="year-button"
+                onclick="showYear('year2023', this)">
+
+                2023
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================================
+             2025
+        ====================================== -->
+
+        <div
+            id="year2025"
+            class="year-content active">
+
+            <div class="papers-grid">
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        2025 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2025/computer-science-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Mechanical Engineering
+                    </h3>
+
+                    <p>
+                        2025 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2025/mechanical-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Civil Engineering
+                    </h3>
+
+                    <p>
+                        2025 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2025/civil-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MBA
+                    </h3>
+
+                    <p>
+                        2025 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2025/mba-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MCA
+                    </h3>
+
+                    <p>
+                        2025 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2025/mca-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             2024
+        ====================================== -->
+
+        <div
+            id="year2024"
+            class="year-content">
+
+            <div class="papers-grid">
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        2024 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2024/computer-science-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Mechanical Engineering
+                    </h3>
+
+                    <p>
+                        2024 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2024/mechanical-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Civil Engineering
+                    </h3>
+
+                    <p>
+                        2024 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2024/civil-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MBA
+                    </h3>
+
+                    <p>
+                        2024 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2024/mba-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MCA
+                    </h3>
+
+                    <p>
+                        2024 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2024/mca-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             2023
+        ====================================== -->
+
+        <div
+            id="year2023"
+            class="year-content">
+
+            <div class="papers-grid">
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        2023 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2023/computer-science-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Mechanical Engineering
+                    </h3>
+
+                    <p>
+                        2023 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2023/mechanical-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Civil Engineering
+                    </h3>
+
+                    <p>
+                        2023 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2023/civil-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MBA
+                    </h3>
+
+                    <p>
+                        2023 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2023/mba-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="paper-card searchable-item">
+
+                    <div class="paper-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        MCA
+                    </h3>
+
+                    <p>
+                        2023 Model Question Paper
+                    </p>
+
+                    <a
+                        href="papers/2023/mca-model-paper.pdf"
+                        download
+                        target="_blank"
+                        class="download-btn">
+
+                        📥 Download PDF
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div id="noResults">
+            No matching documents found.
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <div class="downloads-footer">
+
+        © Library • Digital Downloads
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+    /* =========================================
+       YEAR BUTTON FUNCTION
+    ========================================= */
+
+    function showYear(yearId, button) {
+
+        const yearSections =
+            document.querySelectorAll(
+                ".year-content"
+            );
+
+        yearSections.forEach(function(section) {
+
+            section.classList.remove("active");
+
+        });
+
+
+        const buttons =
+            document.querySelectorAll(
+                ".year-button"
+            );
+
+        buttons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        document
+            .getElementById(yearId)
+            .classList.add("active");
+
+
+        button.classList.add("active");
+
+    }
+
+
+
+    /* =========================================
+       SEARCH FUNCTION
+    ========================================= */
+
+    const searchInput =
+        document.getElementById(
+            "downloadSearch"
+        );
+
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+
+            const searchText =
+                this.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const items =
+                document.querySelectorAll(
+                    ".searchable-item"
+                );
+
+
+            let found = false;
+
+
+            items.forEach(function(item) {
+
+                const text =
+                    item.textContent
+                        .toLowerCase();
+
+
+                if (
+                    text.includes(searchText)
+                ) {
+
+                    item.style.display =
+                        "";
+
+                    found = true;
+
+                } else {
+
+                    item.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            const noResults =
+                document.getElementById(
+                    "noResults"
+                );
+
+
+            if (
+                searchText !== "" &&
+                !found
+            ) {
+
+                noResults.style.display =
+                    "block";
+
+            } else {
+
+                noResults.style.display =
+                    "none";
+
+            }
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>
+
+
